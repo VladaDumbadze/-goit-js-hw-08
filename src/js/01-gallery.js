@@ -19,9 +19,8 @@ function onPicClickLight(event) {
     event.preventDefault();
     const isPic = event.target.classList.contains("gallery__image");
     if (!isPic) return;
-    let gallery = new SimpleLightbox('.gallery a');
-    gallery.on(`show.simpleLightbox`, function () {
-    captionsData: `img`; captionDelay: `250`;});
+    let gallery = new SimpleLightbox('.gallery a', {captionsData: `alt`, captionDelay: `250`}) ;
+    
     function keyEsc(event) {
         if (event.code === 'Escape') {
             lightbox.close();
